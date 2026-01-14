@@ -11,6 +11,9 @@ function createGrid(size){
         for (let j = 0; j<size; j++){
             square = document.createElement("div");
             square.classList.add("square");
+            square.addEventListener("mouseenter", (e) => {
+                e.target.style.backgroundColor = "black";
+            }); 
             row.appendChild(square);
         }
         container.appendChild(row);
@@ -25,12 +28,16 @@ function deleteGrid(){
     });
 }
 
-
+//Grid size logic
 let enterButton = document.querySelector("button");
 let size = 16;
 createGrid(size);
 enterButton.addEventListener("click", () => {
     size = Number(prompt("Enter new size!"));
-    deleteGrid();
-    createGrid(size);
+    if (size > 100 || size < 0){
+        alert("Invalid Input!");
+    }else{
+        deleteGrid();
+        createGrid(size);
+    }
 });
