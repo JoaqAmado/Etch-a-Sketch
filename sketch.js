@@ -12,7 +12,7 @@ function createGrid(size){
             square = document.createElement("div");
             square.classList.add("square");
             square.addEventListener("mouseenter", (e) => {
-                e.target.style.backgroundColor = "black";
+                e.target.style.backgroundColor = `rgba(${randomColor()}, ${randomColor()}, ${randomColor()}, 1.0)`;
             }); 
             row.appendChild(square);
         }
@@ -26,6 +26,10 @@ function deleteGrid(){
     container.forEach((div) => {
         div.remove();
     });
+}
+
+function randomColor(){
+    return Math.round(Math.random()*256);
 }
 
 //Grid size logic
