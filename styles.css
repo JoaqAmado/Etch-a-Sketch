@@ -1,8 +1,17 @@
 .container{
-    width: 960px;
-    height: 960px;
+    width: 540px;
+    height: 540px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    
 }
 
 .row{
